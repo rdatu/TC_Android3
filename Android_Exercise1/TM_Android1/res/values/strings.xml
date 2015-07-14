@@ -7,5 +7,7 @@
     <string name="screensize_textview">Screen Size: </string>
     <string name="screen_size">Screen Size is less than 600dp</string>
     <string name="hint_eventname">Enter the name of Event</string>
+    <string name="confirmButton">Confirm</string>
+    <string name="hint_eventdesc">Event Description</string>
 
 </resources>
