@@ -13,7 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class DirectoryActivity extends FragmentActivity {
+public class DirectoryActivity extends FragmentActivity implements
+		DatePickerFragment.OnCompleteListener {
 
 	private Button mHelloWorld, mRunAppList, mSetDate;
 	private TextView mHelloWorldText;
@@ -58,6 +59,7 @@ public class DirectoryActivity extends FragmentActivity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				DialogFragment newFrag = new DatePickerFragment();
+
 				newFrag.show(getSupportFragmentManager(), "datePicker");
 			}
 		});
@@ -106,6 +108,12 @@ public class DirectoryActivity extends FragmentActivity {
 		Intent i = new Intent();
 		setResult(LoginActivity.RESULT_LOGOUT, i);
 		finish();
+	}
+
+	@Override
+	public void onComplete(String date) {
+		// TODO Auto-generated method stub
+		mSetDate.setText(date);
 	}
 
 }

@@ -2,15 +2,37 @@ package com.cyscorpions.android.rdatu.exercisegtok;
 
 import java.util.Calendar;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.widget.DatePicker;
 import android.widget.Toast;
 
 public class DatePickerFragment extends DialogFragment implements
 		DatePickerDialog.OnDateSetListener {
+
+	public static interface OnCompleteListener {
+		public abstract void onComplete(String date);
+	}
+
+	private OnCompleteListener mListener;
+
+	@Override
+	public void onAttach(Activity activity) {
+		super.onAttach(activity);
+		try {
+			this.mListener = (OnCompleteListener) activity;
+			Log.d("Exercise", "" + (this.mListener == null));
+		} catch (final ClassCastException e) {
+			throw new ClassCastException(activity.toString()
+					+ " must implement OnCompleteListener");
+		}
+	}
+
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		final Calendar c = Calendar.getInstance();
@@ -25,8 +47,10 @@ public class DatePickerFragment extends DialogFragment implements
 	public void onDateSet(DatePicker view, int year, int monthOfYear,
 			int dayOfMonth) {
 		// TODO Auto-generated method stub
-		Toast.makeText(getActivity(),
-				"Date Set to " + monthOfYear + "/" + dayOfMonth + "/" + year,
-				Toast.LENGTH_LONG).show();
+		String date = monthOfYear + "/" + dayOfMonth + "/" + year;
+		Toast.makeText(getActivity(), date, Toast.LENGTH_LONG).show();
+		Log.d("Exercise", date);
+		this.mListener.onComplete(date);
+
 	}
 }
