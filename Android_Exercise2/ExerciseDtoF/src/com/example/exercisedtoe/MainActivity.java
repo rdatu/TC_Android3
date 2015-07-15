@@ -9,31 +9,35 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-	private Button mChangeLayoutButton, mGridViewButton, mListViewButton;
-	TextView mLabel;
+	static class ViewHolder {
+		Button mChangeLayoutButton, mGridViewButton, mListViewButton;
+		TextView mLabel;
+	}
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.relative_layout);
 
-		mLabel = (TextView) findViewById(R.id.label);
-		mLabel.setText(R.string.relative_label);
+		ViewHolder holder = new ViewHolder();
+		holder.mLabel = (TextView) findViewById(R.id.label);
+		holder.mLabel.setText(R.string.relative_label);
 
-		mChangeLayoutButton = (Button) findViewById(R.id.changeLayoutButton);
-		mChangeLayoutButton.setOnClickListener(new View.OnClickListener() {
+		holder.mChangeLayoutButton = (Button) findViewById(R.id.changeLayoutButton);
+		holder.mChangeLayoutButton
+				.setOnClickListener(new View.OnClickListener() {
 
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent i = new Intent(getApplicationContext(),
-						LinearActivity.class);
-				startActivity(i);
-			}
-		});
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						Intent i = new Intent(getApplicationContext(),
+								LinearActivity.class);
+						startActivity(i);
+					}
+				});
 
-		mGridViewButton = (Button) findViewById(R.id.gridviewButton);
-		mGridViewButton.setOnClickListener(new View.OnClickListener() {
+		holder.mGridViewButton = (Button) findViewById(R.id.gridviewButton);
+		holder.mGridViewButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -44,8 +48,8 @@ public class MainActivity extends Activity {
 			}
 		});
 
-		mListViewButton = (Button) findViewById(R.id.listviewButton);
-		mListViewButton.setOnClickListener(new View.OnClickListener() {
+		holder.mListViewButton = (Button) findViewById(R.id.listviewButton);
+		holder.mListViewButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
