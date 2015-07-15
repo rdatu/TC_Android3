@@ -13,5 +13,9 @@
     <string name="button_horizontal">Horizontal Orientation</string>
     <string name="list_view">List View</string>
     <string name="grid_view">Grid View</string>
+    <string name="toast_message">You Clicked The List Item</string>
+    <string name="toast_message2">You Clicked The Grid Item</string>
+    <string name="relative_label">Relative Layout</string>
+    <string name="linear_label">Linear Layout</string>
 
 </resources>

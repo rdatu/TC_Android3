@@ -26,6 +26,14 @@
             android:name=".LinearActivity"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name=".ListLayoutActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".GridLayoutActivity"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>

@@ -4,48 +4,47 @@
     android:orientation="vertical" >
 
     <TextView
+        android:id="@+id/label"
         style="?android:listSeparatorTextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <RelativeLayout
+    <Button
+        android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/margin_top_separator" >
+        android:layout_marginTop="@dimen/margin_top_separator"
+        android:text="@string/button_vertical" />
 
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button1" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_vertical" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/button1"
-            android:text="@string/button2" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_separator"
+        android:orientation="horizontal" >
 
         <Button
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/button2"
-            android:layout_toRightOf="@id/button1"
-            android:text="@string/button3" />
+            android:layout_weight="1"
+            android:text="@string/button_horizontal" />
 
         <Button
             android:id="@+id/button4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/button1"
-            android:layout_toLeftOf="@id/button3"
-            android:text="@string/button4" />
-    </RelativeLayout>
+            android:layout_weight="1"
+            android:text="@string/button_horizontal" />
+    </LinearLayout>
 
     <Button
-        android:id="@+id/changeLayoutButton"
+        android:id="@+id/changeLayoutButtonLinear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
@@ -53,7 +52,7 @@
         android:text="@string/change_layout" />
 
     <Button
-        android:id="@+id/listviewButton"
+        android:id="@+id/listviewButtonLinear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
@@ -61,7 +60,7 @@
         android:text="@string/list_view" />
 
     <Button
-        android:id="@+id/gridviewButton"
+        android:id="@+id/gridviewButtonLinear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
