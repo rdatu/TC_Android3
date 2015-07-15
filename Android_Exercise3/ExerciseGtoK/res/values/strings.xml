@@ -14,5 +14,7 @@
     <string name="coded_password">almostdone</string>
     <string name="run_applist">Run Other Application</string>
     <string name="broken_alarmclock">Broken Alarm Clock</string>
+    <string name="menu_logout">Logout</string>
+    <string name="context_reset_text">Reset Text</string>
 
 </resources>

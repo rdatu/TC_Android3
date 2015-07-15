@@ -16,6 +16,7 @@ public class LoginActivity extends Activity {
 	public static final String EXTRA_NAME = "LoginName";
 	public static final String EXTRA_LOGIN_SUCCESS = "IsSuccess";
 	public static final int RESULT_LOGOUT = 221;
+	public static final int REQUEST_LOGIN = 200;
 
 	private Button mLoginButton;
 	private ToggleButton mShowPassword;
@@ -66,7 +67,7 @@ public class LoginActivity extends Activity {
 							DirectoryActivity.class);
 					i.putExtra(EXTRA_NAME, username);
 					i.putExtra(EXTRA_LOGIN_SUCCESS, accepted);
-					startActivityForResult(i, RESULT_LOGOUT);
+					startActivityForResult(i, REQUEST_LOGIN);
 
 				} else {
 					Toast.makeText(getBaseContext(),
@@ -84,5 +85,21 @@ public class LoginActivity extends Activity {
 
 		return (username.equals(resUsername) && password.equals(resPassword)) ? true
 				: false;
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode == REQUEST_LOGIN) {
+			if (resultCode == RESULT_LOGOUT || resultCode == RESULT_CANCELED) {
+				Toast.makeText(getApplicationContext(), "Logged out",
+						Toast.LENGTH_LONG).show();
+			}
+		}
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		mPasswordInput.setText("");
 	}
 }
