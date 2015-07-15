@@ -30,10 +30,10 @@
             android:text="@string/run_applist" />
 
         <Button
-            android:id="@+id/brokenAlarmClock"
+            android:id="@+id/setDateButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/broken_alarmclock" />
+            android:text="@string/set_date" />
     </LinearLayout>
 
 </LinearLayout>

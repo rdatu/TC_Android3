@@ -16,5 +16,7 @@
     <string name="broken_alarmclock">Broken Alarm Clock</string>
     <string name="menu_logout">Logout</string>
     <string name="context_reset_text">Reset Text</string>
+    <string name="set_date">Set Date</string>
+    <string name="set_time">Set Time</string>
 
 </resources>

@@ -4,8 +4,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import org.w3c.dom.Text;
-import android.R.color;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.content.pm.PackageManager;

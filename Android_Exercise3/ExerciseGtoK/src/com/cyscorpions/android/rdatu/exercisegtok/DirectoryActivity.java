@@ -1,8 +1,9 @@
 package com.cyscorpions.android.rdatu.exercisegtok;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
@@ -11,11 +12,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class DirectoryActivity extends Activity {
+public class DirectoryActivity extends FragmentActivity {
 
-	private Button mHelloWorld, mRunAppList, mBrokenAlarmClock;
+	private Button mHelloWorld, mRunAppList, mSetDate;
 	private TextView mHelloWorldText;
 
 	@Override
@@ -51,14 +51,14 @@ public class DirectoryActivity extends Activity {
 			}
 		});
 
-		mBrokenAlarmClock = (Button) findViewById(R.id.brokenAlarmClock);
-		mBrokenAlarmClock.setOnClickListener(new View.OnClickListener() {
+		mSetDate = (Button) findViewById(R.id.setDateButton);
+		mSetDate.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Toast.makeText(getApplicationContext(), "Under Construction",
-						Toast.LENGTH_LONG).show();
+				DialogFragment newFrag = new DatePickerFragment();
+				newFrag.show(getSupportFragmentManager(), "datePicker");
 			}
 		});
 
@@ -101,7 +101,7 @@ public class DirectoryActivity extends Activity {
 		}
 
 	}
-	
+
 	private void logout() {
 		Intent i = new Intent();
 		setResult(LoginActivity.RESULT_LOGOUT, i);
