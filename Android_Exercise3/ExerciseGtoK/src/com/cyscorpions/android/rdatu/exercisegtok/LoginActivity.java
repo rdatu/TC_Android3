@@ -63,7 +63,7 @@ public class LoginActivity extends Activity {
 				if (accepted) {
 					// TODO: LOGIN
 					Intent i = new Intent(getApplicationContext(),
-							AppListActivity.class);
+							DirectoryActivity.class);
 					i.putExtra(EXTRA_NAME, username);
 					i.putExtra(EXTRA_LOGIN_SUCCESS, accepted);
 					startActivityForResult(i, RESULT_LOGOUT);

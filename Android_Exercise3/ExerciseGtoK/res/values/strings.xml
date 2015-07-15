@@ -12,5 +12,7 @@
     <string name="toast_valid_login">Login Success</string>
     <string name="coded_username">exercise</string>
     <string name="coded_password">almostdone</string>
+    <string name="run_applist">Run Other Application</string>
+    <string name="broken_alarmclock">Broken Alarm Clock</string>
 
 </resources>
