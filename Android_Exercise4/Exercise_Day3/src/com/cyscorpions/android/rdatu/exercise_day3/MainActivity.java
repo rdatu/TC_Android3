@@ -1,41 +1,70 @@
 package com.cyscorpions.android.rdatu.exercise_day3;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity implements
+		ConfirmDialog.ConfirmDialogListener {
 
 	private static final String TAG = "ActivityState";
+	private Button mSendButton;
+
+	private EditText mContactText;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		Log.d(TAG, "Activite state: Created");
+		Log.d(TAG, "Activity state: Created");
+
+		mContactText = (EditText) findViewById(R.id.contactInput);
+
+		mSendButton = (Button) findViewById(R.id.sendButton);
+		mSendButton.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+
+				if (mContactText.getText().toString().equals(null)
+						|| mContactText.getText().toString().equals("")) {
+					Toast.makeText(getApplicationContext(),
+							R.string.send_warning, Toast.LENGTH_SHORT).show();
+					return;
+				}
+
+				String msg = String.format(
+						getResources().getString(R.string.dialog_message),
+						mContactText.getText().toString());
+
+				DialogFragment dialog = new ConfirmDialog(msg);
+				dialog.show(getSupportFragmentManager(), "ConfirmDialog");
+			}
+		});
 	}
 
 	@Override
 	protected void onStart() {
 		super.onStart();
-		Toast.makeText(getApplicationContext(), R.string.toast_message_start,
-				Toast.LENGTH_LONG).show();
+
 		Log.d(TAG, "Activity state: Started");
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
-		Toast.makeText(getApplicationContext(), R.string.toast_message_resume,
-				Toast.LENGTH_LONG).show();
+
 		Log.d(TAG, "Activity state: Resumed");
 	}
 
 	@Override
 	protected void onPause() {
-		Toast.makeText(getApplicationContext(), R.string.toast_message_pause,
-				Toast.LENGTH_LONG).show();
+
 		Log.d(TAG, "Activity state: Paused");
 		super.onPause();
 
@@ -43,8 +72,7 @@ public class MainActivity extends Activity {
 
 	@Override
 	protected void onStop() {
-		Toast.makeText(getApplicationContext(), R.string.toast_message_stop,
-				Toast.LENGTH_LONG).show();
+
 		Log.d(TAG, "Activity state: Stop");
 		super.onStop();
 
@@ -52,10 +80,22 @@ public class MainActivity extends Activity {
 
 	@Override
 	protected void onDestroy() {
-		Toast.makeText(getApplicationContext(), R.string.toast_message_destroy,
-				Toast.LENGTH_LONG).show();
+
 		Log.d(TAG, "Activity state: Destroyed");
 		super.onDestroy();
+
+	}
+
+	@Override
+	public void onDialogPositiveClick(DialogFragment dialog) {
+		Toast.makeText(getApplicationContext(), R.string.toast_sent,
+				Toast.LENGTH_SHORT).show();
+	}
+
+	@Override
+	public void onDialogNegativeClick(DialogFragment dialog) {
+		Toast.makeText(getApplicationContext(), R.string.toast_cancelled,
+				Toast.LENGTH_SHORT).show();
 
 	}
 
