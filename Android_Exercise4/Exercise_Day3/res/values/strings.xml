@@ -13,5 +13,7 @@
     <string name="toast_cancelled">Operation cancelled by user.</string>
     <string name="dialog_message">Send Message to: \n\t%1$s</string>
     <string name="send_warning">No Contact Info Entered.</string>
+    <string name="messaging_button">Messaging</string>
+    <string name="image_button">Show Image</string>
 
 </resources>

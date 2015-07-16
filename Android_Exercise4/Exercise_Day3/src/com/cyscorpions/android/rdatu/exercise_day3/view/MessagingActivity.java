@@ -1,4 +1,4 @@
-package com.cyscorpions.android.rdatu.exercise_day3;
+package com.cyscorpions.android.rdatu.exercise_day3.view;
 
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
@@ -9,7 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends FragmentActivity implements
+import com.cyscorpions.android.rdatu.exercise_day3.R;
+
+public class MessagingActivity extends FragmentActivity implements
 		ConfirmDialog.ConfirmDialogListener {
 
 	private static final String TAG = "ActivityState";
@@ -20,7 +22,7 @@ public class MainActivity extends FragmentActivity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_messaging);
 		Log.d(TAG, "Activity state: Created");
 
 		mContactText = (EditText) findViewById(R.id.contactInput);
