@@ -1,13 +1,13 @@
 package com.cyscorpions.android.rdatu.exercise_day3.view;
 
+import com.cyscorpions.android.rdatu.exercise_day3.R;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-
-import com.cyscorpions.android.rdatu.exercise_day3.R;
 
 public class ConfirmDialog extends DialogFragment {
 

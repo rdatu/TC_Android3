@@ -1,5 +1,7 @@
 package com.cyscorpions.android.rdatu.exercise_day3.view;
 
+import com.cyscorpions.android.rdatu.exercise_day3.R;
+
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
@@ -8,8 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.cyscorpions.android.rdatu.exercise_day3.R;
 
 public class MessagingActivity extends FragmentActivity implements
 		ConfirmDialog.ConfirmDialogListener {
