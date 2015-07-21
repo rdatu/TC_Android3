@@ -15,5 +15,9 @@
     <string name="send_warning">No Contact Info Entered.</string>
     <string name="messaging_button">Messaging</string>
     <string name="image_button">Show Image</string>
+    <string name="contacts_button">Contacts</string>
+    <string name="contact">Contact</string>
+    <string name="number_hint">Enter Number</string>
+    <string name="number_text">Number</string>
 
 </resources>
