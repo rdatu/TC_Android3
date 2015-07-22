@@ -1,0 +1,14 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="margin_small">12dp</dimen>
+    <dimen name="allpurpose_zero">0dp</dimen>
+    <dimen name="table_layout_margin">40dp</dimen>
+    <dimen name="button_small">48dp</dimen>
+    <dimen name="button_smaller">24dp</dimen>
+    <dimen name="font_tiny">8sp</dimen>
+    <dimen name="font_medium">20sp</dimen>
+    <dimen name="font_small">12sp</dimen>
+
+</resources>
