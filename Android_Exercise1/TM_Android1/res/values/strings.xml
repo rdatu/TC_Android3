@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TM_Android1</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="screensize_textview">Screen Size: </string>
+    <string name="screen_size">Screen Size is less than 600dp</string>
+    <string name="hint_eventname">Enter the name of Event</string>
+
+</resources>
