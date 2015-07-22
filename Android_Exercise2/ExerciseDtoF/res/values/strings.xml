@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ExerciseDtoE</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="button1">Button 1</string>
+    <string name="button2">Rightof </string>
+    <string name="button3">Belowof / Right of</string>
+    <string name="button4">Leftof / Below of</string>
+    <string name="change_layout">Change Layout</string>
+    <string name="button_vertical">Vertical Orientation</string>
+    <string name="button_horizontal">Horizontal Orientation</string>
+    <string name="list_view">List View</string>
+    <string name="grid_view">Grid View</string>
+    <string name="toast_message">You Clicked The List Item</string>
+    <string name="toast_message2">You Clicked The Grid Item</string>
+    <string name="relative_label">Relative Layout</string>
+    <string name="linear_label">Linear Layout</string>
+
+</resources>
